@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-web-dpy
+  name: frontend-dpy
   labels:
-    app: frontend-web
+    app: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-web
+      app: frontend
   template:
     metadata:
       namespace: onebank-dev-ns
       labels:
-        app: frontend-web
+        app: frontend
     spec:
       containers:
-      - name: frontend-web-ctr
+      - name: frontend-ctr
         image: rcronald/frontend
         resources:
           requests:
